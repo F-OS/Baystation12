@@ -43,6 +43,35 @@
 							 /datum/computer_file/program/camera_monitor)
 	required_education = EDUCATION_TIER_MEDSCHOOL
 
+/datum/job/surgicaltrainee
+	title = "Surgical Resident"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Chief Medical Officer, the Corporate Liaison and Medical Personnel"
+	economic_power = 4
+	ideal_character_age = 30
+	minimal_player_age = 0
+	outfit_type = /obj/item/clothing/under/rank/medical/scrubs/green
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/contractor)
+	min_skill = list(	SKILL_MEDICAL = SKILL_BASIC,
+	                    SKILL_ANATOMY = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX,
+	                    SKILL_VIROLOGY    = SKILL_MAX)
+
+	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
+			            access_eva, access_surgery, access_medical_equip, access_solgov_crew, access_hangar)
+	minimal_access = list()
+
+	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
+							 /datum/computer_file/program/camera_monitor)
+	skill_points = 26
+	required_education = EDUCATION_TIER_MASTERS
+	maximum_education = EDUCATION_TIER_MEDSCHOOL
+	
 /datum/job/doctor
 	title = "Corpsman"
 	total_positions = 3
@@ -86,7 +115,6 @@
 	skill_points = 26
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_MASTERS
-
 /datum/job/doctor_contractor
 	title = "Medical Contractor"
 	department = "Medical"
@@ -153,7 +181,7 @@
 	required_education = EDUCATION_TIER_MEDSCHOOL
 
 /datum/job/biomech/get_description_blurb()
-	return "You are the Biomechanical Engineer. You are responsible for repairing, upgrading and handling all bio-synthetic crew (like FBPs) on board. You are also responsible for placing brains into MMI’s and anything involving augments. You answer to the Chief Medical Officer and the Corporate Liaison."
+	return "You are the Biomechanical Engineer. You are responsible for repairing, upgrading and handling all bio-synthetic crew (like FBPs) on board. You are also responsible for placing brains into MMIâ€™s and anything involving augments. You answer to the Chief Medical Officer and the Corporate Liaison."
 
 /datum/job/medical_trainee
 	title = "Corpsman Trainee"
